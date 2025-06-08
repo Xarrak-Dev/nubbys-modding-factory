@@ -18,6 +18,7 @@ title = "Nubby's Number Factory .exe Folder"
 ok_button_text = "Select Current Folder"
 file_mode = 2
 access = 2
+root_subfolder = "D:\\Programs\\Steam\\steamapps\\common\\Nubby's Number Factory"
 
 [node name="FileDialog2" type="FileDialog" parent="."]
 auto_translate_mode = 1
@@ -26,6 +27,7 @@ position = Vector2i(500, 0)
 ok_button_text = "Select Current Folder"
 file_mode = 2
 access = 2
+root_subfolder = "C:\\Users\\Benjamin\\AppData\\Local"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -56,8 +58,17 @@ offset_right = 784.0
 offset_bottom = 123.0
 placeholder_text = "mod id (exmod or nuno)"
 
+[node name="Label" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 143.0
+offset_right = 1029.0
+offset_bottom = 380.0
+text = "placeholder"
+autowrap_mode = 1
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
 [connection signal="dir_selected" from="FileDialog2" to="." method="_on_file_dialog_2_dir_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_text_edit_text_changed"]
