@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcl85gnafkd3j"]
+
+[ext_resource type="Script" uid="uid://bq12a35cxjskm" path="res://mod_button.gd" id="1_p4kl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4kl5"]
+size = Vector2(600, 500)
+
+[node name="ModButton" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_p4kl5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 600.0
+offset_bottom = 500.0
+mouse_default_cursor_shape = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 100.0
+offset_bottom = 100.0
+mouse_default_cursor_shape = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="nameLabel" type="Label" parent="."]
+offset_right = 600.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "err: empty mod"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(300, 250)
+shape = SubResource("RectangleShape2D_p4kl5")
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

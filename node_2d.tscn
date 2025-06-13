@@ -14,20 +14,18 @@ offset_bottom = 121.0
 text = "download the forgery example mod"
 
 [node name="FileDialog" type="FileDialog" parent="."]
-title = "Nubby's Number Factory .exe Folder"
+title = "Open a Directory"
 ok_button_text = "Select Current Folder"
 file_mode = 2
 access = 2
-root_subfolder = "D:\\Programs\\Steam\\steamapps\\common\\Nubby's Number Factory"
 
 [node name="FileDialog2" type="FileDialog" parent="."]
 auto_translate_mode = 1
-title = "Local App Data Directory"
+title = "Open a Directory"
 position = Vector2i(500, 0)
 ok_button_text = "Select Current Folder"
 file_mode = 2
 access = 2
-root_subfolder = "C:\\Users\\Benjamin\\AppData\\Local"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -59,12 +57,20 @@ offset_bottom = 123.0
 placeholder_text = "mod id (exmod or nuno)"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 552.0
 offset_top = 143.0
 offset_right = 1029.0
 offset_bottom = 380.0
 text = "placeholder"
 autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 160.0
+offset_top = 251.0
+offset_right = 200.0
+offset_bottom = 291.0
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

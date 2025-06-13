@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpetorf2spqdv"]
+
+[ext_resource type="Script" uid="uid://c1gqm2ymmyj8t" path="res://mods_scene.gd" id="1_s2lkp"]
+
+[node name="ModsScene" type="Node2D"]
+script = ExtResource("1_s2lkp")
